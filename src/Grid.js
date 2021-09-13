@@ -41,6 +41,7 @@ const Grid = () => {
 
   return (
     <div className='container mt-5'>
+      <h2 className='text-primary text-center'>Triki !</h2>
       <div className='row'>
         {renderSquare(0)}
         {renderSquare(1)}
@@ -56,8 +57,10 @@ const Grid = () => {
         {renderSquare(7)}
         {renderSquare(8)}
       </div>
-      <div>Player turn: {turn ? 'X' : '0'}</div>
-      <div>
+      <div className='col text-center fs-1'>
+        Player turn: {turn ? 'X' : '0'}
+      </div>
+      <div className='col text-center fs-1'>
         {playerWinner ? (
           `The winner is: ${playerWinner}`
         ) : gameDraw ? (
@@ -66,7 +69,11 @@ const Grid = () => {
           <>No winner yet!</>
         )}
       </div>
-      <a href='/'>restart the game!</a>
+      <div className='d-flex justify-content-evenly'>
+        <a className='text-center btn btn-primary' role='button' href='/'>
+          restart the game!
+        </a>
+      </div>
     </div>
   );
 };
