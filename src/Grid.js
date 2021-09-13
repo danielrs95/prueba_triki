@@ -66,6 +66,7 @@ const Grid = () => {
           <>No winner yet!</>
         )}
       </div>
+      <a href='/'>restart the game!</a>
     </div>
   );
 };
