@@ -4,7 +4,7 @@ import React from 'react';
 
 const Square = ({ value, onClick }) => {
   return (
-    <button className='col' onClick={onClick}>
+    <button className='col' onClick={onClick} style={{ height: '7rem' }}>
       {value}
     </button>
   );

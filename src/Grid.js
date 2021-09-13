@@ -3,7 +3,7 @@ import Square from './Square';
 
 const Grid = () => {
   return (
-    <div className='container-fluid'>
+    <div className='container mt-5'>
       <div className='row'>
         <Square value={0} onClick={null} />
         <Square value={1} onClick={null} />
