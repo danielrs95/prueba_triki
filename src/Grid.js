@@ -12,6 +12,9 @@ const Grid = () => {
   // calculate winner
   const playerWinner = winner(squares);
 
+  // calculate draw
+  const gameDraw = draw(squares);
+
   // Pasa la logica del renderizado del Square a una funcion
   const renderSquare = (i) => {
     return (
@@ -48,8 +51,15 @@ const Grid = () => {
         {renderSquare(7)}
         {renderSquare(8)}
       </div>
+      <div>Player turn: {turn ? 'X' : '0'}</div>
       <div>
-        {playerWinner ? `The winner is: ${playerWinner}` : <>No winner yet!</>}
+        {playerWinner ? (
+          `The winner is: ${playerWinner}`
+        ) : gameDraw ? (
+          `The game is a draw!`
+        ) : (
+          <>No winner yet!</>
+        )}
       </div>
     </div>
   );
@@ -79,6 +89,17 @@ const winner = (squares) => {
     }
   }
   return null;
+};
+
+const draw = (squares) => {
+  for (let i = 0; i < squares.length; i++) {
+    if (squares[i] == null) {
+      // Iteremos por todos los elementos, si encuentra algun null devuelve false
+      return false;
+    }
+  }
+  // Si itera por todos los elementos y no encuentra null, devuelve true indicando que hay empate
+  return true;
 };
 
 export default Grid;
