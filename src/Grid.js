@@ -6,6 +6,9 @@ const Grid = () => {
   const [squares, setSquares] = useState(Array(9).fill(null));
   console.log(squares);
 
+  // Definimos el turno
+  const [turn, setTurn] = useState(true);
+
   // Pasa la logica del renderizado del Square a una funcion
   const renderSquare = (i) => {
     return (
@@ -14,8 +17,12 @@ const Grid = () => {
         onClick={() => {
           // Copia de squares, para poder cambiar el estado
           const copySquares = squares.slice();
-          copySquares[i] = 'X';
+
+          // El turno inicial siempre será X
+          copySquares[i] = turn ? 'X' : '0';
           setSquares(copySquares);
+
+          setTurn(!turn);
         }}
       />
     );
