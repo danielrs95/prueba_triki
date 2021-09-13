@@ -1,22 +1,23 @@
 import React from 'react';
+import Square from './Square';
 
 const Grid = () => {
   return (
-    <div className='container'>
+    <div className='container-fluid'>
       <div className='row'>
-        <div className='col'>1</div>
-        <div className='col'>2</div>
-        <div className='col'>3</div>
+        <Square value={0} onClick={null} />
+        <Square value={1} onClick={null} />
+        <Square value={2} onClick={null} />
       </div>
       <div className='row'>
-        <div className='col'>4</div>
-        <div className='col'>5</div>
-        <div className='col'>6</div>
+        <Square value={3} onClick={null} />
+        <Square value={4} onClick={null} />
+        <Square value={5} onClick={null} />
       </div>
       <div className='row'>
-        <div className='col'>7</div>
-        <div className='col'>8</div>
-        <div className='col'>9</div>
+        <Square value={6} onClick={null} />
+        <Square value={7} onClick={null} />
+        <Square value={8} onClick={null} />
       </div>
     </div>
   );
