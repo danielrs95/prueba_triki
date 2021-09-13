@@ -21,6 +21,11 @@ const Grid = () => {
       <Square
         value={squares[i]}
         onClick={() => {
+          // Evitamos que se pueda hacer click en un cuadro que ya está usado y que se pueda dar click si ya hay un ganador en caso que se halla ganado muy rapido
+          if (squares[i] != null || playerWinner != null) {
+            return;
+          }
+
           // Copia de squares, para poder cambiar el estado
           const copySquares = squares.slice();
 
