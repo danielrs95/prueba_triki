@@ -1,7 +1,7 @@
 import React from 'react';
 
-const App = () => {
+const Grid = () => {
   return <div>triki</div>;
 };
 
-export default App;
+export default Grid;
