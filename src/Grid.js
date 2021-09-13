@@ -8,7 +8,17 @@ const Grid = () => {
 
   // Pasa la logica del renderizado del Square a una funcion
   const renderSquare = (i) => {
-    return <Square value={i} onClick={null} />;
+    return (
+      <Square
+        value={squares[i]}
+        onClick={() => {
+          // Copia de squares, para poder cambiar el estado
+          const copySquares = squares.slice();
+          copySquares[i] = 'X';
+          setSquares(copySquares);
+        }}
+      />
+    );
   };
 
   return (
